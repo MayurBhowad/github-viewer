@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
 
-function App() {
+//Redux
+import { Provider } from 'react-redux';
+// import { store, persistor } from './redux/store.redux';
+import store from './redux/store.redux'
+import { PersistGate } from 'redux-persist/integration/react';
+
+
+import Search from './components/Search.component';
+import Home from './components/Home.component';
+import UserHome from './components/user/UserHome.component';
+import axios from 'axios';
+
+
+function App(props) {
+  const [serachString, setSerachString] = useState('random');
+  const [user, setUser] = useState();
+  let userGithub = [];
+
+  const searchByString = async (e, string) => {
+    e.preventDefault();
+
+  }
+
+
+
+
+  /*
+  https://api.github.com/users/mayurbhowad
+  https://api.github.com/users/'+username+'/repos
+  https://api.github.com/users/mayurbhowad/starred
+   */
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+      <Router>
+        <div className="App">
+          <Route exact path="/" >
+            <Search searchByString={searchByString} />
+            <Home />
+          </Route>
+          <Route exact path='/user'>
+            <UserHome user={user} />
+          </Route>
+
+
+        </div>
+      </Router>
+      {/* </PersistGate> */}
+    </Provider>
   );
 }
 

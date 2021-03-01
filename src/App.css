@@ -28,6 +28,88 @@
   color: #61dafb;
 }
 
+/* Search */
+
+
+.search{
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.btn-search{
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 20px;
+  /* margin-bottom: 50px; */
+  margin-left: 2px;
+}
+
+/* Home */
+.octocat-png{
+  width: 30rem;
+  height: auto;
+}
+
+/* User info */
+.go-back{
+  width: 100%;
+  margin: 1rem ;
+  display: flex;
+}
+
+.go-back .link{
+  padding: 10px;
+  background-color: #61dafb;
+  border-radius: 5px;
+}
+
+.go-back .link:hover{
+  cursor: pointer;
+}
+
+.user-avatar{
+  width: 10rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+.user-username{
+  color: 		#808080;
+}
+
+/* Repo */
+.repo-row{
+  margin: 1rem 2rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+
+.text-muted{
+  color: #808080;
+}
+
+.repo-details{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 2rem;
+}
+
+.repo-row h3,
+.repo-row h4{
+  margin: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
